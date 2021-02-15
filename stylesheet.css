@@ -1,0 +1,128 @@
+* {
+    font-family: urbane,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black; 
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px; padding: 0px;
+    background-color: #DBFFF7;
+}
+
+h1 {font-size: 3em;}
+h2 {font-size: 2em;}
+.wer {font-size: 2em;}
+.beschreibung {font-size:1em;}
+
+.landing {
+    height:100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.kopfzeile {
+    height: 33.33%;
+    background-image: url("/media/briefmarke.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50vw;
+    border: solid 2px magenta;
+    padding-top: 20px;
+}
+
+.col-1, .col-2 {
+    height: 30%;
+    border: solid 2px magenta;
+}
+
+.arrow {
+    animation: blinker 3s linear infinite;
+    text-align: center;
+    font-size: 3em;
+    height: 6,66%
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+hr {
+    border: 2px solid black;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 800px) {
+    /* For desktop: */
+    .col-1 {width: calc(66.66%); float: left; height: 60%;}
+    .col-2 {width: calc(33.33%); float: left; height: 60%;}
+    .kopfzeile {background-size: 20vw;}
+    h1 {font-size: 4em;}
+    h2 {font-size: 2em;}
+    .wer {font-size: 3em;}
+    .beschreibung {font-size: 1em;}
+}
+
+.content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+.accordion {
+    background-color: #DBFFF7;
+    border: 2.5px solid black;
+    color: black;
+    text-align:left;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: 0.1s;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+}
+
+.accordion:hover {
+    background-color: white;}
+
+.panel {
+    background-color: white;
+    overflow: hidden;
+    height:70vh;
+    border-left: 2.5px solid black;
+    border-right: 2.5px solid black;
+    border-bottom: 2.5px solid black;
+    padding-left: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding:20px;
+}
+
+.aa {
+    font-size: 1.5em;
+}
+
+a:link, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.open {
+    background-color: white;
+}
