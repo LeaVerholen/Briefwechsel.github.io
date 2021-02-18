@@ -13,15 +13,22 @@ body {
 
 h1 {font-size: 3em;}
 h2 {font-size: 2em;}
-.wer {font-size: 2em;}
-.beschreibung {font-size:1em;}
+.wer {font-size: 2em; text-align: end; padding-right: 20px;}
+.beschreibung {font-size:1em; text-align: end; padding-right: 20px;}
+a:link, a:visited, a:active, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 
 .landing {
     height:100vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.landing-wrapper {
+    height: 100%;
+    width: 100%;
 }
 
 .kopfzeile {
@@ -30,13 +37,20 @@ h2 {font-size: 2em;}
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 50vw;
-    border: solid 2px magenta;
-    padding-top: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
-.col-1, .col-2 {
-    height: 30%;
-    border: solid 2px magenta;
+.obj1, .obj2 {height: 15%; padding-left: 20px;}
+.obj3, .obj4 {height: 15%;}
+
+.fusszeile {
+    border-top: black 4px solid;
+    border-bottom: black 4px solid;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-left: 20px;
 }
 
 .arrow {
@@ -58,17 +72,6 @@ hr {
     margin: 0;
 }
 
-@media only screen and (min-width: 800px) {
-    /* For desktop: */
-    .col-1 {width: calc(66.66%); float: left; height: 60%;}
-    .col-2 {width: calc(33.33%); float: left; height: 60%;}
-    .kopfzeile {background-size: 20vw;}
-    h1 {font-size: 4em;}
-    h2 {font-size: 2em;}
-    .wer {font-size: 3em;}
-    .beschreibung {font-size: 1em;}
-}
-
 .content {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -86,14 +89,19 @@ hr {
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     cursor: pointer;
     width: 100%;
     text-align: left;
     transition: 0.1s;
     margin-bottom: 0px;
     margin-top: 10px;
-
+    height: 88px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .accordion:hover {
@@ -101,13 +109,36 @@ hr {
 
 .panel {
     background-color: white;
-    overflow: hidden;
     height:70vh;
     border-left: 2.5px solid black;
     border-right: 2.5px solid black;
     border-bottom: 2.5px solid black;
     padding-left: 20px;
+    padding-top: 20px;
+    display: none;
 }
+
+.open {
+    background-color: white;
+}
+
+.image-wrapper {
+    width: 1000px;
+    height: 600px;
+    overflow-x: auto;
+    background-color: red;
+    display: flex;
+}
+.medien {
+    margin-right: 20px;
+    flex: 0 0 auto;
+}
+.bild {
+    height: 600px;
+    width: 600px;
+}
+
+
 
 .footer {
     text-align: center;
@@ -118,11 +149,65 @@ hr {
     font-size: 1.5em;
 }
 
-a:link, a:visited, a:active, a:hover {
-    text-decoration: none;
-    color: black;
-}
 
-.open {
-    background-color: white;
+
+
+
+
+@media only screen and (min-width: 800px) {
+    /* For desktop: */
+    h1 {font-size: 5em;}
+    h2 {font-size: 2em;}
+    .wer {font-size: 4em;}
+    .beschreibung {font-size: 1.5em;}
+
+    .landing-wrapper {
+        display: grid;
+        grid-template-columns: 10% 3% 44% 3% 40%;
+        grid-template-rows: repeat(12, calc(100%/12));
+    }
+
+    .kopfzeile {
+        height: initial;
+        grid-row: 1/ span 3;
+        grid-column: 3/ span 5;
+        background-size: 15vw;
+    }
+
+    .obj1 {
+        height: initial;
+        grid-column: 1/ span 3;
+        grid-row: 6/ span 2;
+    }
+    .obj2 {
+        height: initial;
+        grid-column: 1/ span 3;
+        grid-row: 8/ span 1;
+    }
+    .obj3 {
+        height: initial;
+        grid-column: 5;
+        grid-row: 5/ span 2;
+    }
+    .obj4 {
+        height: initial;
+        grid-column: 5;
+        grid-row: 7/ span 2;
+    }
+
+    .fusszeile {
+        grid-column: 1/ span 5;
+        grid-row: 11;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    .arrow {
+        height: initial;
+        grid-column: 1/ span 5;
+        grid-row: 12/ span 1;
+    }
+
+    .accordion {font-size: 1.5em;}
 }
